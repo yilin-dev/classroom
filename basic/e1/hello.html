@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>純 CSS 文字動畫</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #222;
+      color: white;
+      font-family: monospace;
+      font-size: 5rem;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .word {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .word span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(1em);
+      animation: typing 0.5s forwards;
+    }
+
+    @keyframes typing {
+      from {
+        opacity: 0;
+        transform: translateY(1em);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 文字逐字顯示的延遲 */
+    .word span:nth-child(1) {
+      animation-delay: 3.2s;
+    }
+
+    .word span:nth-child(2) {
+      animation-delay: 3.4s;
+    }
+
+    .word span:nth-child(3) {
+      animation-delay: 3.6s;
+    }
+
+    .word span:nth-child(4) {
+      animation-delay: 3.8s;
+    }
+
+    .word span:nth-child(5) {
+      animation-delay: 4s;
+    }
+
+    .word span:nth-child(6) {
+      animation-delay: 4.2s;
+    }
+
+    .word span:nth-child(7) {
+      animation-delay: 4.4s;
+    }
+
+    .word span:nth-child(8) {
+      animation-delay: 4.6s;
+    }
+
+    .word span:nth-child(9) {
+      animation-delay: 4.8s;
+    }
+
+    .word span:nth-child(10) {
+      animation-delay: 5s;
+    }
+
+    .word span:nth-child(11) {
+      animation-delay: 5.2s;
+    }
+
+    .word span:nth-child(12) {
+      animation-delay: 5.4s;
+    }
+
+    /* 文字移動到右側（等待 4 秒） */
+    .word span:nth-child(1),
+    .word span:nth-child(5),
+    .word span:nth-child(9) {
+      animation: typing 0.5s forwards, moveRightTop 1s forwards ease-out 4s;
+    }
+    .word span:nth-child(2),
+    .word span:nth-child(4),
+    .word span:nth-child(6),
+    .word span:nth-child(8),
+    .word span:nth-child(10),
+    .word span:nth-child(12) {
+      animation: typing 0.5s forwards, moveRightMid 1s forwards ease-out 4s;
+    }
+    .word span:nth-child(3),
+    .word span:nth-child(7),
+    .word span:nth-child(11) {
+      animation: typing 0.5s forwards, moveRightBtm 1s forwards ease-out 4s;
+    }
+
+    @keyframes moveRightTop {
+      to {
+        transform: translate(300px, 0px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    @keyframes moveRightMid {
+      to {
+        transform: translate(300px, 25px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    @keyframes moveRightBtm {
+      to {
+        transform: translate(300px, 50px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* 設定飛出動畫的延遲 */
+    .word span:nth-child(1) {
+      animation-delay: 0.2s, 4.2s;
+    }
+
+    .word span:nth-child(2) {
+      animation-delay: 0.4s, 4.4s;
+    }
+
+    .word span:nth-child(3) {
+      animation-delay: 0.6s, 4.6s;
+    }
+
+    .word span:nth-child(4) {
+      animation-delay: 0.8s, 4.8s;
+    }
+
+    .word span:nth-child(5) {
+      animation-delay: 1s, 5s;
+    }
+
+    .word span:nth-child(6) {
+      animation-delay: 1.2s, 5.2s;
+    }
+
+    .word span:nth-child(7) {
+      animation-delay: 1.4s, 5.4s;
+    }
+
+    .word span:nth-child(8) {
+      animation-delay: 1.6s, 5.6s;
+    }
+
+    .word span:nth-child(9) {
+      animation-delay: 1.8s, 5.8s;
+    }
+
+    .word span:nth-child(10) {
+      animation-delay: 2s, 6s;
+    }
+
+    .word span:nth-child(11) {
+      animation-delay: 2.2s, 6.2s;
+    }
+
+    .word span:nth-child(12) {
+      animation-delay: 2.4s, 6.4s;
+    }
+
+    .title {
+      display:block;
+      text-align:center;
+      font-size:40px;
+      opacity:0;
+      transform:translateY(-8px);
+      animation:appearTitle 6s forwards;
+      animation-delay:7s;
+    }
+
+    @keyframes appearTitle {
+      to {
+        transform:translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="word">
+      <span>H</span>
+      <span>e</span>
+      <span>l</span>
+      <span>l</span>
+      <span>o</span>
+      <span>&nbsp;</span>
+      <span>W</span>
+      <span>o</span>
+      <span>r</span>
+      <span>l</span>
+      <span>d</span>
+      <span>!</span>
+    </div>
+    <div class="title">零基础HTML入门教学 | 轻松学会网页开发</div>
+  </div>
+</body>
+
+</html>
