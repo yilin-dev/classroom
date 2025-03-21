@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转文字</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            transform: rotate(5deg);
+            animation: rotateText 4s ease-in-out infinite;
+        }
+
+        @keyframes rotateText {
+            40% { transform: rotate(-5deg); } /* 向左旋转 */
+            50% { transform: rotate(-5deg); } /* 停留 */
+            90% { transform: rotate(5deg); }  /* 向右旋转 */
+            100% { transform: rotate(5deg); }  /* 停留 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text">小练习</div>
+
+</body>
+</html>
