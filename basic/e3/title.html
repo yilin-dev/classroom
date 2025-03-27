@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 表单基础</title>
+  <style>
+    body {background: white; margin:0;padding:0;}
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      transition:2s all ease;
+      transition-delay:.5s;
+      opacity:1;
+      display:block;
+    }
+    h1.title {
+      transform:translateY(0);
+    }
+    h1.title.hide {
+      transform:translateY(-10px);
+    }
+    h1.animation {
+      position:absolute;
+      background: linear-gradient(45deg, #00c3ff, #ffff1c, #ff2d55);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: textMove 3s infinite linear;
+      transition:.5s opacity ease;
+      transition-delay:0;
+    }
+    .hide {
+      opacity:0;
+    }
+    @keyframes textMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="animation">Hello!</h1>
+    <h1 class="title hide">第三课：HTML 表单基础</h1>
+  </div>
+  <script>
+    const titleTimeout = setTimeout(()=>{
+      [...document.querySelectorAll("h1")].forEach((elem)=>{
+        elem.classList.toggle("hide",!elem.classList.contains("hide"));        
+      })
+    },4000);
+  </script>
+</body>
+</html>
