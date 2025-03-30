@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 表格</title>
+  <style>
+    body {background: white; margin:0;padding:0;}
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      transition:2s all ease;
+      transition-delay:.5s;
+      opacity:1;
+      display:block;
+    }
+    h1.title {
+      transform:translateY(0);
+    }
+    h1.title.hide {
+      transform:translateY(-10px);
+    }
+    h1.animation {
+      position:absolute;      
+      animation: textShadowMove 1.5s forwards ease;
+      transition:.5s all;
+      perspective:1000px;
+      transform-style:preserve-3d;
+      transform:rotateY(180deg);
+      transition-delay:0;
+      text-shadow: 0px 0px 1px #eee;
+    }
+    .hide {
+      opacity:0;
+    }
+    @keyframes textShadowMove {
+      40% { text-shadow: 15px 0px 1px #eee;font-size: 4.5rem; }
+      70% { text-shadow: 0px 0px 1px #eee;font-size: 4rem; }
+      100% { transform:rotateY(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="animation">Hello World</h1>
+    <h1 class="title hide">第四课：HTML 表格大揭秘！</h1>
+  </div>
+  <script>
+    const titleTimeout = setTimeout(()=>{
+      [...document.querySelectorAll("h1")].forEach((elem)=>{
+        elem.classList.toggle("hide",!elem.classList.contains("hide"));        
+      })
+    },2000);
+  </script>
+</body>
+</html>
