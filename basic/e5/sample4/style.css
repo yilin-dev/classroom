@@ -1,0 +1,15 @@
+p {
+    color:red;
+}
+
+.title {
+    font-size:20px;
+}
+
+#header {
+    background:yellow;
+}
+
+* {
+    margin:0;
+}
