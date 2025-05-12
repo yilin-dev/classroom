@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;            
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            padding:0;
+            margin:0;
+            height:100vh;
+            font-size:20px;
+            gap:30px;
+        }
+
+        .text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            transform: rotate(5deg);
+            animation: rotateText 4s ease-in-out infinite;
+        }
+
+        .title {
+            font-size:30px;
+        }
+
+        @keyframes rotateText {
+            40% { transform: rotate(-5deg); } /* 向左旋转 */
+            50% { transform: rotate(-5deg); } /* 停留 */
+            90% { transform: rotate(5deg); }  /* 向右旋转 */
+            100% { transform: rotate(5deg); }  /* 停留 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text">实作练习</div>
+    <div>
+        <div class="title">创建两个按钮并加上script：</div>
+        <ul>
+            <li>按钮 1：toggle class 改颜色</li>
+            <li>按钮 2：innerHTML 改文字</li>
+        </ul>
+    </div>
+</body>
+</html>

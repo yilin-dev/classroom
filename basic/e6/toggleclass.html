@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            display:block;
+            margin:20px auto;
+            padding:10px;
+            color:#555;
+            border: 1px solid #666;
+            border-radius:6px;
+            width:100px;
+            text-align:center;
+            cursor: pointer;
+            transition:all .4s ease;
+        }
+        #box1:hover {
+            background-color:#efefef;
+            color:#000;
+            border:1px solid #000;
+        }
+
+        #box2 {
+            width:90%;
+            max-width:400px;
+            display:block;
+            margin:0 auto;
+            color:#000;
+            border:1px solid #000;
+            background-color:#fff;
+            transition:all .5s ease;
+            padding:10px;
+            text-align:center;
+        }
+
+        #box2.active {
+            max-width:300px;
+            color:#fff;
+            border:1px solid #333;
+            border-radius:20px;
+            background-color:#000;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box1">click me</div>
+    <div id="box2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis, facere quam assumenda perspiciatis sed, vel fuga molestias aut vero id officiis cum. Sapiente accusantium alias pariatur eum explicabo, illum rem.</div>
+    <script>
+        const box1 = document.querySelector("#box1");
+        const box2 = document.querySelector("#box2");
+        box1.addEventListener("click", function() {
+            box2.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
